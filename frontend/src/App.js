@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import AuthForm from './AuthForm';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api/products';
+const API_URL = process.env.REACT_APP_API_URL ? `${process.env.REACT_APP_API_URL}/api/products` : 'http://localhost:5000/api/products';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -28,7 +28,8 @@ function App() {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
-      fetch('http://localhost:5000/api/auth/me', {
+      const authUrl = process.env.REACT_APP_API_URL ? `${process.env.REACT_APP_API_URL}/api/auth/me` : 'http://localhost:5000/api/auth/me';
+      fetch(authUrl, {
         headers: { Authorization: `Bearer ${token}` }
       })
         .then(res => res.ok ? res.json() : null)
