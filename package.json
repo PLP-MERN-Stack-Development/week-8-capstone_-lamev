@@ -17,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/PLP-MERN-Stack-Development/week-8-capstone_-lamev/issues"
   },
-  "homepage": "https://github.com/PLP-MERN-Stack-Development/week-8-capstone_-lamev#readme"
+  "homepage": "https://github.com/PLP-MERN-Stack-Development/week-8-capstone_-lamev#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "jsonwebtoken": "^9.0.2"
+  }
 }

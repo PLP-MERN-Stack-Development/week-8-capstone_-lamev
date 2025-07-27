@@ -18,6 +18,12 @@ const productSchema = new mongoose.Schema({
     min: 0,
     default: 5, // default low stock threshold
   },
+  category: {
+    type: String,
+    required: true,
+    trim: true,
+    default: 'General',
+  },
 }, { timestamps: true });
 
 module.exports = mongoose.model('Product', productSchema); 

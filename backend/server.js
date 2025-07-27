@@ -16,6 +16,9 @@ app.get('/', (req, res) => {
 const productsRouter = require('./routes/products');
 app.use('/api/products', productsRouter);
 
+const authRouter = require('./routes/auth');
+app.use('/api/auth', authRouter);
+
 // MongoDB connection (update with your own URI or use .env)
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/stockdb';
 
